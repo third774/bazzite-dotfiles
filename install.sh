@@ -43,4 +43,4 @@ link_tree() {
 
 while IFS= read -r -d '' entry; do
 	link_tree "$entry" "$HOME/${entry##*/}"
-done < <(find "$source_root" -mindepth 1 -maxdepth 1 -print0)
+done < <(find "$source_root" -mindepth 1 -maxdepth 1 ! -name .gitkeep -print0)
